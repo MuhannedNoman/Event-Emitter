@@ -65,3 +65,22 @@ eventEmitter.on('myEvent', (first,second)=> {
 
 eventEmitter.emit('myEvent',2,2);
 
+class Person extends EventEmitter {
+    constructor(name){
+        super();
+        this._name = name;
+    }
+
+    get name(){
+        return this._name;
+    }
+}
+
+let muhanned = new Person('Muhanned');
+
+muhanned.on('name', ()=> {
+     console.log("I'm " + muhanned.name);
+});
+
+muhanned.emit('name');
+
