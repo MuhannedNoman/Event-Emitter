@@ -76,6 +76,12 @@ class Person extends EventEmitter {
     }
 }
 
+let notMuhanned = new Person("Not Muhanned");
+
+notMuhanned.on('name', ()=> {
+    console.log("This is " + notMuhanned.name);
+});
+
 let muhanned = new Person('Muhanned');
 
 muhanned.on('name', ()=> {
@@ -83,4 +89,4 @@ muhanned.on('name', ()=> {
 });
 
 muhanned.emit('name');
-
+notMuhanned.emit('name');
